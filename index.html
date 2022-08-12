@@ -138,9 +138,9 @@
                 },
                 mouseover: highlightFeature,
             });
-            var popupContent = '<table>\
+            var popupContent = '<table style="border:1px solid; width:100%">\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['WADMKC'] !== null ? autolinker.link(feature.properties['WADMKC'].toLocaleString()) : '') + '</td>\
+                        <td style="text-align: center; vertical-align: middle; border:1px solid" colspan="2"><strong>' + (feature.properties['WADMKC'] !== null ? autolinker.link(feature.properties['WADMKC'].toLocaleString()) : '') + '</strong></td>\
                     </tr>\
                     <tr>\
                         <th scope="row">JmlhSD</th>\
@@ -151,7 +151,7 @@
                         <td>' + (feature.properties['JmlhSMP'] !== null ? autolinker.link(feature.properties['JmlhSMP'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>JmlhSekolah</strong><br />' + (feature.properties['JmlhSekolah'] !== null ? autolinker.link(feature.properties['JmlhSekolah'].toLocaleString()) : '') + '</td>\
+                        <td  style="text-align: center; vertical-align: middle; border-top:#cccccc 1px solid" colspan="2"><strong>JmlhSekolah</strong><br />' + (feature.properties['JmlhSekolah'] !== null ? autolinker.link(feature.properties['JmlhSekolah'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -618,7 +618,7 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nama_Sekolah'] !== null ? autolinker.link(feature.properties['Nama_Sekolah'].toLocaleString()) : '') + '</td>\
+                        <td style="font-weight:bold; font-size:12pt; text-align:center" colspan="2">' + (feature.properties['Nama_Sekolah'] !== null ? autolinker.link(feature.properties['Nama_Sekolah'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">NPSN</th>\
@@ -644,13 +644,13 @@
                         <td>' + (feature.properties['Jumlah_Guru'] !== null ? autolinker.link(feature.properties['Jumlah_Guru'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['FotoA'] !== null ? '<img src="images/' + String(feature.properties['FotoA']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['FotoA'] !== null ? '<img src="images/' + String(feature.properties['FotoA']).replace(/[\\\/:]/g, '_').trim() + '"width="250">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['FotoB'] !== null ? '<img src="images/' + String(feature.properties['FotoB']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['FotoB'] !== null ? '<img src="images/' + String(feature.properties['FotoB']).replace(/[\\\/:]/g, '_').trim() + '"width="250">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['FotoC'] !== null ? '<img src="images/' + String(feature.properties['FotoC']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['FotoC'] !== null ? '<img src="images/' + String(feature.properties['FotoC']).replace(/[\\\/:]/g, '_').trim() + '"width="250">' : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
