@@ -616,7 +616,7 @@
                 },
                 mouseover: highlightFeature,
             });
-            var popupContent = '<table>\
+            var popupContent = '<table style="margin: 0px auto;">\
                     <tr>\
                         <td style="font-weight:bold; font-size:12pt; text-align:center" colspan="2">' + (feature.properties['Nama_Sekolah'] !== null ? autolinker.link(feature.properties['Nama_Sekolah'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -644,13 +644,13 @@
                         <td>' + (feature.properties['Jumlah_Guru'] !== null ? autolinker.link(feature.properties['Jumlah_Guru'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['FotoA'] !== null ? '<img src="images/' + String(feature.properties['FotoA']).replace(/[\\\/:]/g, '_').trim() + '"width="250">' : '') + '</td>\
+                        <td style="text-align:center;" colspan="2">' + (feature.properties['FotoA'] !== null ? '<img src="images/' + String(feature.properties['FotoA']).replace(/[\\\/:]/g, '_').trim() + '"width="250">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['FotoB'] !== null ? '<img src="images/' + String(feature.properties['FotoB']).replace(/[\\\/:]/g, '_').trim() + '"width="250">' : '') + '</td>\
+                        <td style="text-align:center;" colspan="2">' + (feature.properties['FotoB'] !== null ? '<img src="images/' + String(feature.properties['FotoB']).replace(/[\\\/:]/g, '_').trim() + '"width="250">' : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['FotoC'] !== null ? '<img src="images/' + String(feature.properties['FotoC']).replace(/[\\\/:]/g, '_').trim() + '"width="250">' : '') + '</td>\
+                        <td style="text-align:center;" colspan="2">' + (feature.properties['FotoC'] !== null ? '<img src="images/' + String(feature.properties['FotoC']).replace(/[\\\/:]/g, '_').trim() + '"width="250">' : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
