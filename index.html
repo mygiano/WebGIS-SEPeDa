@@ -47,7 +47,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[2.7323103118936163,125.32060106389936],[2.7668526109512643,125.39114226498695]]);
+        }).fitBounds([[2.27452080631033,125.1006540150805],[2.5508591987715143,125.66498362378135]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -349,9 +349,6 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['WADMKC'] !== null ? autolinker.link(feature.properties['WADMKC'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td colspan="2">' + (feature.properties['WADMKD'] !== null ? autolinker.link(feature.properties['WADMKD'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -370,7 +367,7 @@
         }
 
         function style_BatasDesa_5_0(feature) {
-            switch(String(feature.properties['WADMKC'])) {
+            switch(String(feature.properties['q2wHide_WADMKC'])) {
                 case 'Biaro':
                     return {
                 pane: 'pane_BatasDesa_5',
@@ -632,6 +629,34 @@
                     <tr>\
                         <th scope="row">NPSN</th>\
                         <td>' + (feature.properties['NPSN'] !== null ? autolinker.link(feature.properties['NPSN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Kepala Sekolah</th>\
+                        <td>' + (feature.properties['Nama_KepSek'] !== null ? autolinker.link(feature.properties['Nama_KepSek'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Alamat_Sekolah'] !== null ? autolinker.link(feature.properties['Alamat_Sekolah'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Status Akreditasi</th>\
+                        <td>' + (feature.properties['Status_Akreditasi'] !== null ? autolinker.link(feature.properties['Status_Akreditasi'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Jumlah Siswa</th>\
+                        <td>' + (feature.properties['Jumlah_Siswa'] !== null ? autolinker.link(feature.properties['Jumlah_Siswa'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Jumlah Pengajar</th>\
+                        <td>' + (feature.properties['Jumlah_Guru'] !== null ? autolinker.link(feature.properties['Jumlah_Guru'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FotoA'] !== null ? '<img src="images/' + String(feature.properties['FotoA']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FotoB'] !== null ? '<img src="images/' + String(feature.properties['FotoB']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FotoC'] !== null ? '<img src="images/' + String(feature.properties['FotoC']).replace(/[\\\/:]/g, '_').trim() + '">' : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
