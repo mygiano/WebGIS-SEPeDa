@@ -47,7 +47,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[1.959966022404736,124.39501789391208],[2.9428737243496053,126.40228121294409]]);
+        }).fitBounds([[1.9996579709699258,124.46605002193245],[2.920382968136388,126.34632576915793]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -759,31 +759,6 @@
         .title += 'Search for a place';
         var baseMaps = {};
         L.control.layers(baseMaps,{'Titik_Sekolah qgis2web<br /><table><tr><td style="text-align: center;"><img src="legend/Titik_Sekolahqgis2web_7_SD0.png" /></td><td>SD</td></tr><tr><td style="text-align: center;"><img src="legend/Titik_Sekolahqgis2web_7_SMP1.png" /></td><td>SMP</td></tr><tr><td style="text-align: center;"><img src="legend/Titik_Sekolahqgis2web_7_Sekolah2.png" /></td><td>Sekolah</td></tr></table>': layer_Titik_Sekolahqgis2web_7,'<img src="legend/Titik_SarKes_6.png" /> Titik_SarKes': layer_Titik_SarKes_6,'Batas Desa<br /><table><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_Biaro0.png" /></td><td>Biaro</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauBarat1.png" /></td><td>Siau Barat</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauBaratSelatan2.png" /></td><td>Siau Barat Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauBaratUtara3.png" /></td><td>Siau Barat Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauTengah4.png" /></td><td>Siau Tengah</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauTimur5.png" /></td><td>Siau Timur</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauTimurSelatan6.png" /></td><td>Siau Timur Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_Tagulandang7.png" /></td><td>Tagulandang</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_TagulandangSelatan8.png" /></td><td>Tagulandang Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_TagulandangUtara9.png" /></td><td>Tagulandang Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_10.png" /></td><td></td></tr></table>': layer_BatasDesa_5,'Batas Kecamatan<br /><table><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_Biaro0.png" /></td><td>Biaro</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauBarat1.png" /></td><td>Siau Barat</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauBaratSelatan2.png" /></td><td>Siau Barat Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauBaratUtara3.png" /></td><td>Siau Barat Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauTengah4.png" /></td><td>Siau Tengah</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauTimur5.png" /></td><td>Siau Timur</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauTimurSelatan6.png" /></td><td>Siau Timur Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_Tagulandang7.png" /></td><td>Tagulandang</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_TagulandangSelatan8.png" /></td><td>Tagulandang Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_TagulandangUtara9.png" /></td><td>Tagulandang Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_10.png" /></td><td></td></tr></table>': layer_BatasKecamatan_4,"Google Satellite Hybrid": layer_GoogleSatelliteHybrid_3,"Voyager [no labels] (retina)": layer_Voyagernolabelsretina_2,"OpenTopoMap": layer_OpenTopoMap_1,"Stamen Watercolor": layer_StamenWatercolor_0,},{collapsed:false}).addTo(map);L.control.scale({position: 'bottomleft', maxWidth: 100, metric: true, imperial: false, updateWhenIdle: false}).addTo(map);
-        map.on("zoomend", function(){
-
-                if (map.hasLayer(layer_BatasKecamatan_4)) {
-                    if (map.getZoom() <= 8 && map.getZoom() >= 19) {
-                        layer_BatasKecamatan_4.eachLayer(function (layer) {
-                            layer.openTooltip();
-                        });
-                    } else {
-                        layer_BatasKecamatan_4.eachLayer(function (layer) {
-                            layer.closeTooltip();
-                        });
-                    }
-                }
-                if (map.hasLayer(layer_BatasDesa_5)) {
-                    if (map.getZoom() <= 12 && map.getZoom() >= 19) {
-                        layer_BatasDesa_5.eachLayer(function (layer) {
-                            layer.openTooltip();
-                        });
-                    } else {
-                        layer_BatasDesa_5.eachLayer(function (layer) {
-                            layer.closeTooltip();
-                        });
-                    }
-                }
-        });
         setBounds();
         var i = 0;
         layer_BatasKecamatan_4.eachLayer(function(layer) {
@@ -791,7 +766,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['WADMKC'] !== null?String('<div style="color: #ff0101; font-size: 14pt; font-weight: bold; font-family: \'Candara\', sans-serif;">' + layer.feature.properties['WADMKC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_BatasKecamatan_4'});
+            layer.bindTooltip((layer.feature.properties['WADMKC'] !== null?String('<div style="color: #ff4949; font-size: 16pt; font-weight: bold; font-family: \'Candara\', sans-serif;">' + layer.feature.properties['WADMKC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_BatasKecamatan_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -804,35 +779,13 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['WADMKD'] !== null?String('<div style="color: #ffffff; font-size: 12pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['WADMKD']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_BatasDesa_5'});
+            layer.bindTooltip((layer.feature.properties['WADMKD'] !== null?String('<div style="color: #ffff1f; font-size: 14pt; font-family: \'Calibri\', sans-serif;">' + layer.feature.properties['WADMKD']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_BatasDesa_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-                if (map.hasLayer(layer_BatasKecamatan_4)) {
-                    if (map.getZoom() <= 8 && map.getZoom() >= 19) {
-                        layer_BatasKecamatan_4.eachLayer(function (layer) {
-                            layer.openTooltip();
-                        });
-                    } else {
-                        layer_BatasKecamatan_4.eachLayer(function (layer) {
-                            layer.closeTooltip();
-                        });
-                    }
-                }
-                if (map.hasLayer(layer_BatasDesa_5)) {
-                    if (map.getZoom() <= 12 && map.getZoom() >= 19) {
-                        layer_BatasDesa_5.eachLayer(function (layer) {
-                            layer.openTooltip();
-                        });
-                    } else {
-                        layer_BatasDesa_5.eachLayer(function (layer) {
-                            layer.closeTooltip();
-                        });
-                    }
-                }
         resetLabels([layer_BatasKecamatan_4,layer_BatasDesa_5]);
         map.on("zoomend", function(){
             resetLabels([layer_BatasKecamatan_4,layer_BatasDesa_5]);
