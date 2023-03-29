@@ -18,7 +18,7 @@
             margin: 0;
         }
         </style>
-        <title>WEBGIS-SEPeDa "SISTEM EVALUASI PELAYANAN DASAR" Kab. Kep. SITARO</title>
+        <title>WEBGIS-SEPeDa Kab. Kep. SITARO</title>
     </head>
     <body>
         <div id="map">
@@ -51,7 +51,7 @@
             } else {
               highlightLayer.setStyle({
                 fillColor: '#ffff00',
-                fillOpacity: 1
+                fillOpacity: 0.3
               });
             }
         }
@@ -621,15 +621,15 @@
                         <td style="font-weight:bold; font-size:12pt; text-align:center" colspan="2">' + (feature.properties['Nama_Sekolah'] !== null ? autolinker.link(feature.properties['Nama_Sekolah'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td style="font-style:italic; text-align:center" colspan="2">' + (feature.properties['Alamat_Sekolah'] !== null ? autolinker.link(feature.properties['Alamat_Sekolah'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
                         <th scope="row">NPSN</th>\
                         <td>' + (feature.properties['NPSN'] !== null ? autolinker.link(feature.properties['NPSN'].toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
+					<tr>\
                         <th scope="row">Kepala Sekolah</th>\
                         <td>' + (feature.properties['Nama_KepSek'] !== null ? autolinker.link(feature.properties['Nama_KepSek'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Alamat_Sekolah'] !== null ? autolinker.link(feature.properties['Alamat_Sekolah'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Status Akreditasi</th>\
@@ -738,7 +738,7 @@
                 return this._div;
             };
             title.update = function () {
-                this._div.innerHTML = '<h2>WEBGIS SEPEDA - Sistem Evaluasi Pelayanan Dasar</h2>';
+                this._div.innerHTML = '<h2>WEBGIS-SEPEDA<br/>[Sistem Evaluasi Pelayanan Dasar Kab. Kep. SITARO]</h2>';
             };
             title.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
@@ -751,8 +751,8 @@
         .className += ' fa fa-search';
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
-        var baseMaps = {};
-        L.control.layers(baseMaps,{'Titik_Sekolah qgis2web<br /><table><tr><td style="text-align: center;"><img src="legend/Titik_Sekolahqgis2web_7_SD0.png" /></td><td>SD</td></tr><tr><td style="text-align: center;"><img src="legend/Titik_Sekolahqgis2web_7_SMP1.png" /></td><td>SMP</td></tr><tr><td style="text-align: center;"><img src="legend/Titik_Sekolahqgis2web_7_Sekolah2.png" /></td><td>Sekolah</td></tr></table>': layer_Titik_Sekolahqgis2web_7,'<img src="legend/Titik_SarKes_6.png" /> Titik_SarKes': layer_Titik_SarKes_6,'Batas Desa<br /><table><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_Biaro0.png" /></td><td>Biaro</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauBarat1.png" /></td><td>Siau Barat</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauBaratSelatan2.png" /></td><td>Siau Barat Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauBaratUtara3.png" /></td><td>Siau Barat Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauTengah4.png" /></td><td>Siau Tengah</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauTimur5.png" /></td><td>Siau Timur</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauTimurSelatan6.png" /></td><td>Siau Timur Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_Tagulandang7.png" /></td><td>Tagulandang</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_TagulandangSelatan8.png" /></td><td>Tagulandang Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_TagulandangUtara9.png" /></td><td>Tagulandang Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_10.png" /></td><td></td></tr></table>': layer_BatasDesa_5,'Batas Kecamatan<br /><table><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_Biaro0.png" /></td><td>Biaro</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauBarat1.png" /></td><td>Siau Barat</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauBaratSelatan2.png" /></td><td>Siau Barat Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauBaratUtara3.png" /></td><td>Siau Barat Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauTengah4.png" /></td><td>Siau Tengah</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauTimur5.png" /></td><td>Siau Timur</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauTimurSelatan6.png" /></td><td>Siau Timur Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_Tagulandang7.png" /></td><td>Tagulandang</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_TagulandangSelatan8.png" /></td><td>Tagulandang Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_TagulandangUtara9.png" /></td><td>Tagulandang Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_10.png" /></td><td></td></tr></table>': layer_BatasKecamatan_4,"Google Satellite Hybrid": layer_GoogleSatelliteHybrid_3,"Voyager [no labels] (retina)": layer_Voyagernolabelsretina_2,"OpenTopoMap": layer_OpenTopoMap_1,"Stamen Watercolor": layer_StamenWatercolor_0,},{collapsed:false}).addTo(map);L.control.scale({position: 'bottomleft', maxWidth: 100, metric: true, imperial: false, updateWhenIdle: false}).addTo(map);
+        var baseMaps = {'Google Hybrid':layer_GoogleSatelliteHybrid_3,'Voyager Retina':layer_Voyagernolabelsretina_2,'OpenTopoMap':layer_OpenTopoMap_1,'Stamen':layer_StamenWatercolor_0};
+        L.control.layers(baseMaps,{'Titik_Sekolah qgis2web<br /><table><tr><td style="text-align: center;"><img src="legend/Titik_Sekolahqgis2web_7_SD0.png" /></td><td>SD</td></tr><tr><td style="text-align: center;"><img src="legend/Titik_Sekolahqgis2web_7_SMP1.png" /></td><td>SMP</td></tr><tr><td style="text-align: center;"><img src="legend/Titik_Sekolahqgis2web_7_Sekolah2.png" /></td><td>Sekolah</td></tr></table>': layer_Titik_Sekolahqgis2web_7,'<img src="legend/Titik_SarKes_6.png" /> Titik_SarKes': layer_Titik_SarKes_6,'Batas Desa<br /><table><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_Biaro0.png" /></td><td>Biaro</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauBarat1.png" /></td><td>Siau Barat</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauBaratSelatan2.png" /></td><td>Siau Barat Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauBaratUtara3.png" /></td><td>Siau Barat Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauTengah4.png" /></td><td>Siau Tengah</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauTimur5.png" /></td><td>Siau Timur</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_SiauTimurSelatan6.png" /></td><td>Siau Timur Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_Tagulandang7.png" /></td><td>Tagulandang</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_TagulandangSelatan8.png" /></td><td>Tagulandang Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_TagulandangUtara9.png" /></td><td>Tagulandang Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasDesa_5_10.png" /></td><td></td></tr></table>': layer_BatasDesa_5,'Batas Kecamatan<br /><table><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_Biaro0.png" /></td><td>Biaro</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauBarat1.png" /></td><td>Siau Barat</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauBaratSelatan2.png" /></td><td>Siau Barat Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauBaratUtara3.png" /></td><td>Siau Barat Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauTengah4.png" /></td><td>Siau Tengah</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauTimur5.png" /></td><td>Siau Timur</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_SiauTimurSelatan6.png" /></td><td>Siau Timur Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_Tagulandang7.png" /></td><td>Tagulandang</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_TagulandangSelatan8.png" /></td><td>Tagulandang Selatan</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_TagulandangUtara9.png" /></td><td>Tagulandang Utara</td></tr><tr><td style="text-align: center;"><img src="legend/BatasKecamatan_4_10.png" /></td><td></td></tr></table>': layer_BatasKecamatan_4},{collapsed:false}).addTo(map);L.control.scale({position: 'bottomleft', maxWidth: 100, metric: true, imperial: false, updateWhenIdle: false}).addTo(map);
         setBounds();
         var i = 0;
         layer_BatasKecamatan_4.eachLayer(function(layer) {
